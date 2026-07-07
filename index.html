@@ -144,6 +144,10 @@
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+  /* 日本語の改行制御: 対応ブラウザでは文節単位で折り返す */
+  h1,h2,h3,.mission,.plan-arrow .t{word-break:auto-phrase}
+  .sec-head h2,.hero h1,.msg h3,.cta h2,.mission{text-wrap:balance}
+  .nb{display:inline-block}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
   .sec{padding:76px 0}
   .sec-head{text-align:center;margin-bottom:44px}
@@ -491,7 +495,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="en">SALARY &amp; BENEFITS</span>
-      <h2>働き方は2つ。まず日給で始めて、正社員へ。</h2>
+      <h2><span class="nb">働き方は2つ。</span><span class="nb">まず日給で始めて、</span><span class="nb">正社員へ。</span></h2>
       <p>「たくさん稼ぎたい」も「安定したい」も、どちらも用意しています。</p>
     </div>
     <div class="plans">
@@ -570,9 +574,9 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="en">OUR PROMISE</span>
-      <h2>過去は聞かない。見るのは、これからだけ。</h2>
+      <h2><span class="nb">過去は聞かない。</span><span class="nb">見るのは、これからだけ。</span></h2>
     </div>
-    <p class="mission">一度レールを外れても、現場の仕事で人生を挽回できる場所をつくる。<br>それがWAFKEの使命です。だから、<b>学歴も年齢も経歴も、評価に入れません。</b><br>その代わり、この4つだけは守ってください。</p>
+    <p class="mission"><span class="nb">一度レールを外れても、</span><span class="nb">現場の仕事で</span><span class="nb">人生を挽回できる場所をつくる。</span><br>それが<span class="nb">WAFKEの使命です。</span>だから、<b><span class="nb">学歴も年齢も経歴も、</span><span class="nb">評価に入れません。</span></b><br><span class="nb">その代わり、</span><span class="nb">この4つだけは守ってください。</span></p>
     <div class="rules">
       <div class="rule"><span>01</span>遅刻をしない</div>
       <div class="rule"><span>02</span>連絡を返す</div>
@@ -648,7 +652,7 @@
         <span class="s">上半身・自然な表情／作業着でも私服でも／明るい場所で</span>
       </div>
       <div>
-        <h3>肩書きじゃない。現場で、人生をひっくり返す。</h3>
+        <h3><span class="nb">肩書きじゃない。</span><span class="nb">現場で、</span><span class="nb">人生をひっくり返す。</span></h3>
         <p>私は大学を中退しています。コロナで思い描いていたレールから外れ、会社勤めもうまくいかず、ずいぶん遠回りをしてきました。「中退でしょ」と言われるたび、正直、悔しかった。</p>
         <p>でも、過去は変えられない。だったら、学歴や会社の看板ではなく、<b>現場でやったことがそのまま評価になる場所</b>を自分でつくろう。それがWAFKEの始まりです。</p>
         <p>この仕事を選んだのは、逃げではなく勝算があるからです。AIがオフィスの仕事を置き換えていく時代に、現場で手を動かせる人の価値は、むしろ上がっていく。ここがいちばん逆転できる場所だと、本気で思っています。</p>
@@ -738,7 +742,7 @@
 <!-- ===== CTA ===== -->
 <section class="sec cta" id="entry">
   <div class="wrap">
-    <h2>まずは、話を聞くだけでもOK。</h2>
+    <h2><span class="nb">まずは、</span><span class="nb">話を聞くだけでもOK。</span></h2>
     <p>「自分にできるかな」は、有償トライアルで確かめられます。お気軽にどうぞ。</p>
     <div class="cta-btns">
       <!-- LINE公式アカウント開設後、下の行のコメントを外してURLを差し替え
