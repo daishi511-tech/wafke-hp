@@ -289,6 +289,21 @@
   .badge{display:inline-block;background:#fdeeda;color:#8a5a1e;font-size:12px;font-weight:800;
     padding:3px 10px;border-radius:6px;margin-left:8px;vertical-align:middle}
 
+  /* ===== Previous jobs chips（前職なんでもOK） ===== */
+  .prevjobs{background:#f8ead8;border-top:1px solid #eeddc4;padding:26px 0 30px;text-align:center}
+  .pj-t{font-size:16px;font-weight:900;color:var(--deep);margin-bottom:14px}
+  .pj-t b{color:var(--accent-d)}
+  .pj-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:860px;margin:0 auto;padding:0 20px}
+  .pj-chips span{background:#fff;border:1px solid #e7d9c2;border-radius:999px;padding:7px 15px;font-size:13px;font-weight:700;color:var(--ink)}
+  .pj-chips span.em{background:var(--deep);border-color:var(--deep);color:var(--amber)}
+
+  /* ===== A day timeline（1日の流れ） ===== */
+  .day{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:1020px;margin:0 auto}
+  .ditem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px;position:relative}
+  .ditem .tm{display:inline-block;font-size:14px;font-weight:900;color:var(--accent-d);letter-spacing:.02em}
+  .ditem h3{font-size:14.5px;font-weight:800;margin:6px 0 4px;line-height:1.5}
+  .ditem p{font-size:12px;color:var(--gray);line-height:1.65}
+
   /* ===== Career path stairs（収入の階段） ===== */
   .path{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:end;max-width:1020px;margin:0 auto;padding-top:24px}
   .pstep{border-radius:16px 16px 0 0;padding:22px 16px 18px;color:#fff;display:flex;flex-direction:column;position:relative}
@@ -478,6 +493,16 @@
   </div>
 </section>
 
+<!-- ===== Previous jobs ===== -->
+<section class="prevjobs">
+  <p class="pj-t"><span class="nb">前職は、<b>なんでもいい。</b></span><span class="nb">見るのは、これからだけ。</span></p>
+  <div class="pj-chips">
+    <span>警備員</span><span>引越し</span><span>飲食・ホール</span><span>工場・製造</span>
+    <span>配送ドライバー</span><span>営業</span><span>アパレル</span><span>フリーター</span>
+    <span class="em">職歴に自信がなくてもOK</span>
+  </div>
+</section>
+
 <!-- ===== Job ===== -->
 <section class="sec" id="job">
   <div class="wrap">
@@ -501,6 +526,26 @@
         <div class="ph-slot"><span class="cam">📷</span><span class="t">写真⑦　完成した駐車場（全景）</span></div></div>
     </div>
     <p class="note">重機の運転免許や専門資格は<b>不要</b>。先輩と一緒に手順を覚えれば、<b>未経験でも数週間で一通りこなせます。</b></p>
+  </div>
+</section>
+
+<!-- ===== A day ===== -->
+<section class="sec" id="day" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">A DAY</span>
+      <h2><span class="nb">ある1日の流れ</span></h2>
+      <p><span class="nb">「体力もつかな」が不安な人ほど、</span><span class="nb">見てほしい1日です。</span></p>
+    </div>
+    <div class="day">
+      <div class="ditem"><span class="tm">8:00</span><h3>現場に直行</h3><p>電車OK。事務所に寄る必要はありません。</p></div>
+      <div class="ditem"><span class="tm">8:30</span><h3>段取り→作業開始</h3><p>その日の手順を確認してスタート。</p></div>
+      <div class="ditem"><span class="tm">12:00</span><h3>昼休憩</h3><p>しっかり1時間。現場近くでランチ。</p></div>
+      <div class="ditem"><span class="tm">13:00</span><h3>午後の作業</h3><p>合間にこまめに休憩を取ります。</p></div>
+      <div class="ditem"><span class="tm">17:00</span><h3>片付け・確認</h3><p>仕上がりをチェックして道具をまとめる。</p></div>
+      <div class="ditem"><span class="tm">17:30</span><h3>現場から直帰</h3><p>夜は自分の時間。日払い申請もOK。</p></div>
+    </div>
+    <p class="note" style="margin-top:14px">※時間は一例です。現場により前後します。</p>
   </div>
 </section>
 
