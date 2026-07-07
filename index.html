@@ -289,20 +289,30 @@
   .badge{display:inline-block;background:#fdeeda;color:#8a5a1e;font-size:12px;font-weight:800;
     padding:3px 10px;border-radius:6px;margin-left:8px;vertical-align:middle}
 
-  /* ===== Career ===== */
-  .career{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch}
-  .cstep{background:var(--bg);border:1px solid var(--line);padding:28px 22px;text-align:center;position:relative}
-  .cstep:nth-child(2){background:#eaf3ee}
-  .cstep:nth-child(3){background:var(--primary-d);color:#fff}
-  .cstep .ti{font-size:13px;font-weight:800;color:var(--primary)}
-  .cstep:nth-child(3) .ti{color:var(--amber)}
-  .cstep h3{font-size:20px;font-weight:900;margin:8px 0}
-  .cstep p{font-size:13.5px;color:var(--gray)}
-  .cstep:nth-child(3) p{color:#b9d0c5}
-  .cstep .arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);z-index:2;
-    width:24px;height:24px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px}
-  .cstep:last-child .arrow{display:none}
-  @media(max-width:780px){.career{grid-template-columns:1fr}.cstep .arrow{right:50%;top:auto;bottom:-12px;transform:translateX(50%) rotate(90deg)}}
+  /* ===== Career path stairs（収入の階段） ===== */
+  .path{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;max-width:980px;margin:0 auto;padding-top:24px}
+  .pstep{border-radius:16px 16px 0 0;padding:22px 16px 18px;color:#fff;display:flex;flex-direction:column;position:relative}
+  .pstep .term{font-size:12px;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.16);border-radius:999px;padding:3px 10px;align-self:flex-start}
+  .pstep h3{font-size:16.5px;font-weight:900;margin:10px 0 4px}
+  .pstep .money{font-size:19px;font-weight:900;color:var(--amber);line-height:1.35}
+  .pstep .money small{display:block;font-size:11.5px;color:rgba(255,255,255,.82);font-weight:700;margin-top:2px}
+  .pstep p{font-size:12.5px;color:rgba(255,255,255,.85);margin-top:8px;line-height:1.65}
+  .pstep-1{background:#5c8a77;min-height:210px}
+  .pstep-2{background:#3f7361;min-height:250px}
+  .pstep-3{background:#2f6b57;min-height:290px}
+  .pstep-4{background:var(--primary-d);min-height:330px;border-top:4px solid var(--accent)}
+  .pstep-4 .flag{position:absolute;top:-16px;right:12px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:900;
+    border-radius:6px;padding:4px 10px;box-shadow:0 4px 10px rgba(217,102,44,.35)}
+  .path-base{height:10px;background:linear-gradient(90deg,#e0d8c8,#b9c6bd);border-radius:999px;max-width:980px;margin:0 auto}
+  @media(max-width:760px){
+    .path{grid-template-columns:1fr;align-items:stretch;gap:0;padding-top:8px}
+    .pstep{min-height:0!important;border-radius:14px}
+    .pstep+.pstep{margin-top:30px}
+    .pstep+.pstep::before{content:"▲ ステップアップ";position:absolute;top:-24px;left:50%;transform:translateX(-50%);
+      color:var(--accent-d);font-size:12px;font-weight:900;white-space:nowrap}
+    .path-base{display:none}
+  }
 
   /* ===== Cards / Voice ===== */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -556,16 +566,38 @@
 <section class="sec" id="career" style="background:var(--bg)">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en">CAREER PATH</span>
-      <h2>未経験から、リーダーへ</h2>
-      <p>「ずっと作業員」では終わりません。段階的にステップアップできる道があります。</p>
+      <span class="en">CAREER &amp; INCOME</span>
+      <h2><span class="nb">収入は、</span><span class="nb">階段で上がっていく。</span></h2>
+      <p><span class="nb">「この先いくらになるのか」まで、</span><span class="nb">最初に見せます。</span><br><span class="nb">期間は目安ですが、</span><span class="nb">道は本気で用意しています。</span></p>
     </div>
-    <div class="career">
-      <div class="cstep"><div class="ti">STEP 1</div><h3>作業員</h3><p>まずは現場で手順を覚える。未経験はここからスタートします。<span class="arrow">▶</span></p></div>
-      <div class="cstep"><div class="ti">STEP 2</div><h3>資格取得</h3><p>準中型免許など、仕事の幅を広げる資格を会社の支援で取得。<span class="arrow">▶</span></p></div>
-      <div class="cstep"><div class="ti">STEP 3</div><h3>現場リーダー</h3><p>チームをまとめ、現場を任される存在へ。収入もしっかり上がります。</p></div>
+    <div class="path">
+      <div class="pstep pstep-1">
+        <span class="term">入社すぐ</span>
+        <h3>日給制スタッフ</h3>
+        <div class="money">日当 17,000円<small>月収例 374,000円（22日稼働）</small></div>
+        <p>日払い・週払いOK。先輩とペアで現場を覚える。</p>
+      </div>
+      <div class="pstep pstep-2">
+        <span class="term">3ヶ月〜（目安）</span>
+        <h3>正社員登用</h3>
+        <div class="money">月給 300,000円〜<small>＋賞与・昇給・社会保険完備</small></div>
+        <p>雨の日も現場の谷間も、収入が変わらない安定へ。</p>
+      </div>
+      <div class="pstep pstep-3">
+        <span class="term">1年〜（目安）</span>
+        <h3>資格取得で単価UP</h3>
+        <div class="money">昇給で収入アップ<small>準中型免許など・取得は会社がサポート</small></div>
+        <p>できる仕事が増えるほど、給与に反映される。</p>
+      </div>
+      <div class="pstep pstep-4">
+        <span class="flag">目標ライン</span>
+        <span class="term">2〜3年〜（目安）</span>
+        <h3>現場リーダー</h3>
+        <div class="money">年収 600万円<small>ここを通過点にする道をつくる</small></div>
+        <p>チームと現場を任される存在に。教えて、引き上げて、チームごと上がる。</p>
+      </div>
     </div>
-    <p class="note">腕と資格を積んだ先に、<b>年収600万円という目標ライン</b>。そこを通過点にできる道を、会社としてつくっていきます。</p>
+    <div class="path-base"></div>
   </div>
 </section>
 
