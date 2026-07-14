@@ -299,6 +299,23 @@
     border-bottom:2px solid var(--accent);padding-bottom:2px}
   .pay-next a:hover{color:var(--accent)}
 
+  /* ===== Empathy（痛み→反転→未来） ===== */
+  .empathy{background:var(--paper);border-top:1px solid #efe7d8}
+  .emp-wrap{max-width:640px}
+  .emp-kicker{text-align:center;color:var(--gray);font-weight:800;font-size:14px;letter-spacing:.04em;margin-bottom:26px}
+  .emp-pains{list-style:none;display:flex;flex-direction:column;gap:13px;margin:0 auto 32px;max-width:540px}
+  .emp-pains li{position:relative;padding-left:22px;font-size:16.5px;color:#5a616b;line-height:1.7}
+  .emp-pains li::before{content:"";position:absolute;left:0;top:.72em;width:11px;height:2px;background:#cbd0d6;border-radius:2px}
+  .emp-flip{text-align:center;font-size:20.5px;font-weight:900;color:var(--ink);line-height:1.7;margin-bottom:24px}
+  .emp-flip b{color:var(--accent-d)}
+  .emp-future{text-align:center;font-size:15.5px;color:var(--deep);font-weight:700;line-height:1.95}
+  .emp-arrow{text-align:center;color:var(--accent);font-size:20px;margin-top:20px}
+  @media(max-width:560px){
+    .emp-flip{font-size:18px}
+    .emp-pains li{font-size:15px}
+    .emp-future{font-size:14.5px}
+  }
+
   /* ===== Previous jobs chips（前職なんでもOK） ===== */
   .prevjobs{background:#f8ead8;border-top:1px solid #eeddc4;padding:26px 0 30px;text-align:center}
   .pj-t{font-size:16px;font-weight:900;color:var(--deep);margin-bottom:14px}
@@ -510,6 +527,22 @@
     <div class="stat"><div class="num">37.4<small>万円</small></div><div class="lbl">月収例（22日稼働の場合）</div></div>
     <div class="stat"><div class="num">土日祝<small>休み</small></div><div class="lbl">稼ぎたい人は土曜出勤もOK</div></div>
     <div class="stat"><div class="num">日払い<small>OK</small></div><div class="lbl">週払いも選べます</div></div>
+  </div>
+</section>
+
+<!-- ===== Empathy ===== -->
+<section class="sec empathy">
+  <div class="wrap emp-wrap">
+    <p class="emp-kicker">こんな毎日に、心当たりはないか。</p>
+    <ul class="emp-pains">
+      <li>何年働いても、給料はほとんど上がらない。</li>
+      <li>学歴や過去のことで、どこか下に見られてきた。</li>
+      <li>「どうせ、また続かないだろう」と思われている気がする。</li>
+      <li>このままでいいのか——夜、ふと不安になる。</li>
+    </ul>
+    <p class="emp-flip"><span class="nb">でも、それは</span><span class="nb"><b>努力不足でも、</b></span><span class="nb"><b>根性のなさでもない。</b></span><br><span class="nb">頑張りがそのまま評価になる場所に、</span><span class="nb">まだ立てていなかっただけだ。</span></p>
+    <p class="emp-future"><span class="nb">給料日、残高を見て</span><span class="nb">「来月も大丈夫」と思える。</span><br><span class="nb">任される現場が増えて、</span><span class="nb">後輩に頼られる。</span><br><span class="nb">その毎日は、ここから一段ずつ、</span><span class="nb">現実になっていく。</span></p>
+    <div class="emp-arrow" aria-hidden="true">▼</div>
   </div>
 </section>
 
