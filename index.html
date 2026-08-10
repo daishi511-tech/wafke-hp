@@ -106,18 +106,13 @@
 </script>
 <!--
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📷 写真差し込みガイド（全9枚・すべてスマホ撮影でOK）
-ページ内の点線枠＝写真スロット。番号と撮りたい内容を枠内に記載済み。
-写真が用意できたら、この枠を <img src="..."> に差し替えます。
-  写真① ヒーロー：現場で作業するスタッフ2〜3人（横長・引き・できれば晴天）
-  写真② 整地・転圧の作業中
-  写真③ 車止めを設置しているところ
-  写真④ ライン引きの作業中（白線が伸びていく画が◎）
-  写真⑤ 精算機・フラップ板の据付作業
-  写真⑥ 看板・照明の取り付け
-  写真⑦ 完成した駐車場（全景・引き）
-  写真⑧⑨ スタッフの顔写真2名（現場で笑顔・上半身）
-  写真⑩ 代表・石田悠人さんの写真（上半身・私服or作業着）
+📷 写真運用メモ（2026-08-07更新）
+実写は assets/photos/ に格納済み（EXIF除去・特定情報のボケ処理済み）。
+ヒーロー=hero.jpg／現場ギャラリー=gallery-01〜06。
+追加撮影の価値が高いもの:
+  ・代表・石田悠人さんの写真1枚（上半身・自然な表情）→ MESSAGEに差し込み予定
+  ・スタッフの笑顔カット → VOICEのアバターを実写に差し替え可能
+掲載の鉄則: 他社ブランド看板は構図で外す／貼り紙・ナンバーはボケ処理／EXIFは必ず除去
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -->
 <style>
@@ -166,6 +161,19 @@
   .ph-slot .s{font-size:11.5px;font-weight:600;color:#a4967c}
   .ph-slot.dark{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.07);color:#d7e6dc}
   .ph-slot.dark .s{color:#b9d0c5}
+
+  /* ===== 実写 ===== */
+  .hero-photo{border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.35)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1020px;margin:0 auto}
+  .gitem{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  .gitem img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .gitem figcaption{padding:10px 14px;font-size:13px;font-weight:800;color:var(--ink)}
+  .gitem figcaption small{display:block;font-weight:600;color:var(--gray);font-size:11.5px;margin-top:2px}
+  .gitem.wide img{aspect-ratio:16/9}
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}.gitem figcaption{padding:8px 10px;font-size:12px}}
+  .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(140deg,var(--deep),var(--deep2));
+    color:var(--amber);font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;letter-spacing:.04em}
 
   /* ===== Header ===== */
   header{position:sticky;top:0;z-index:50;background:rgba(36,73,61,.96);backdrop-filter:blur(8px)}
@@ -404,6 +412,8 @@
 
   /* ===== Message ===== */
   .msg{display:grid;grid-template-columns:.9fr 1.4fr;gap:40px;align-items:start;max-width:900px;margin:0 auto}
+  .msg.msg-solo{grid-template-columns:1fr;max-width:680px}
+  .msg.msg-solo .sign{border-top:1px solid var(--line);padding-top:16px}
   @media(min-width:781px){
     .msg .ph-slot{min-height:300px}
   }
@@ -529,10 +539,8 @@
       </div>
       <p class="cta-note">履歴書なし／気になることを聞くだけでもOK</p>
     </div>
-    <div class="ph-slot dark">
-      <span class="cam">📷</span>
-      <span class="t">写真①　現場で作業するスタッフ2〜3人</span>
-      <span class="s">横長・少し引きの構図／晴天だとベスト／スマホ撮影でOK</span>
+    <div class="hero-photo">
+      <img src="assets/photos/hero.jpg" alt="施工したばかりのコインパーキング。真新しいオレンジのライン" width="1205" height="677">
     </div>
   </div>
 </section>
@@ -629,20 +637,33 @@
       <p>大手パーキング運営会社のコインパーキングを、整地から引き渡しまで自社で一貫施工しています。</p>
     </div>
     <div class="flow">
-      <div class="step"><div class="no">1</div><h3>整地・転圧</h3><p>土地をならして、しっかり固める。すべての土台になる工程です。</p>
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真②　整地・転圧の作業中</span></div></div>
-      <div class="step"><div class="no">2</div><h3>車止めの設置</h3><p>車を停める位置に車止め（輪止め）を据え付けます。</p>
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真③　車止めを設置している手元</span></div></div>
-      <div class="step"><div class="no">3</div><h3>ライン引き</h3><p>駐車区画の白線をひいて、停めやすいレイアウトに仕上げます。</p>
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真④　ライン引き（白線が伸びる画が◎）</span></div></div>
-      <div class="step"><div class="no">4</div><h3>機器の据付</h3><p>フラップ板（ロック板）や料金精算機を設置。駐車場の心臓部です。</p>
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真⑤　精算機・フラップ板の据付</span></div></div>
-      <div class="step"><div class="no">5</div><h3>看板・通電</h3><p>看板や照明を取り付け、通電と動作をチェックします。</p>
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真⑥　看板・照明の取り付け</span></div></div>
-      <div class="step"><div class="no">6</div><h3>完成・引き渡し</h3><p>仕上がりを確認して、お客様へ引き渡し。街に新しい駐車場が誕生します。</p>
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真⑦　完成した駐車場（全景）</span></div></div>
+      <div class="step"><div class="no">1</div><h3>整地・転圧</h3><p>土地をならして、しっかり固める。すべての土台になる工程です。</p></div>
+      <div class="step"><div class="no">2</div><h3>車止めの設置</h3><p>車を停める位置に車止め（輪止め）を据え付けます。</p></div>
+      <div class="step"><div class="no">3</div><h3>ライン引き</h3><p>駐車区画の白線をひいて、停めやすいレイアウトに仕上げます。</p></div>
+      <div class="step"><div class="no">4</div><h3>機器の据付</h3><p>フラップ板（ロック板）や料金精算機を設置。駐車場の心臓部です。</p></div>
+      <div class="step"><div class="no">5</div><h3>看板・通電</h3><p>看板や照明を取り付け、通電と動作をチェックします。</p></div>
+      <div class="step"><div class="no">6</div><h3>完成・引き渡し</h3><p>仕上がりを確認して、お客様へ引き渡し。街に新しい駐車場が誕生します。</p></div>
     </div>
     <p class="note">重機の運転免許や専門資格は<b>不要</b>。先輩と一緒に手順を覚えれば、<b>未経験でも数週間で一通りこなせます。</b></p>
+  </div>
+</section>
+
+<!-- ===== Gallery（現場のリアル） ===== -->
+<section class="sec" id="gallery" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">REAL SITE</span>
+      <h2><span class="nb">現場の、</span><span class="nb">リアル。</span></h2>
+      <p><span class="nb">飾らない、</span><span class="nb">ふだんの現場です。</span><span class="nb">こうやって駐車場が生まれます。</span></p>
+    </div>
+    <div class="gallery">
+      <figure class="gitem"><img src="assets/photos/gallery-01-before.jpg" alt="施工前の駐車場予定地" loading="lazy"><figcaption>施工前<small>ここから2〜3日で生まれ変わる</small></figcaption></figure>
+      <figure class="gitem"><img src="assets/photos/gallery-02-hatsuri.jpg" alt="ハツリ作業中のスタッフ" loading="lazy"><figcaption>ハツリ・下地づくり<small>すべての土台になる工程</small></figcaption></figure>
+      <figure class="gitem"><img src="assets/photos/gallery-03-hoshu.jpg" alt="路面の補修作業" loading="lazy"><figcaption>路面の補修<small>ていねいさが仕上がりを決める</small></figcaption></figure>
+      <figure class="gitem"><img src="assets/photos/gallery-04-kuruma-dome.jpg" alt="車止めの設置作業" loading="lazy"><figcaption>車止めの設置<small>ミリ単位で位置を合わせる</small></figcaption></figure>
+      <figure class="gitem"><img src="assets/photos/gallery-05-seisanki.jpg" alt="精算機の据付作業" loading="lazy"><figcaption>精算機の据付<small>駐車場の心臓部</small></figcaption></figure>
+      <figure class="gitem"><img src="assets/photos/gallery-06-after.jpg" alt="完成した駐車場" loading="lazy"><figcaption>完成<small>街に新しい駐車場が誕生</small></figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -803,13 +824,13 @@
     </div>
     <div class="voice">
       <div class="vcard">
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真⑧<br>スタッフの顔<br>（現場で笑顔）</span></div>
+        <div class="avatar">元警備員</div>
         <h3>未経験でも、すぐ戦力になれた</h3>
         <div class="meta">前職：警備員 ／ 入社1年 ※文面はサンプル。実際の声に差し替え</div>
         <p>「土木なんてやったことなかったけど、先輩が手順を一から教えてくれました。今では現場を任されることも。日当が高いのも続けられる理由です。」</p>
       </div>
       <div class="vcard">
-        <div class="ph-slot"><span class="cam">📷</span><span class="t">写真⑨<br>スタッフの顔<br>（作業の合間）</span></div>
+        <div class="avatar">元引越し</div>
         <h3>同じ場所に飽きる性格に合ってた</h3>
         <div class="meta">前職：引越しスタッフ ／ 入社8ヶ月 ※文面はサンプル。実際の声に差し替え</div>
         <p>「毎回ちがう街で駐車場をつくるので、ルーティンが苦手な自分にはぴったり。完成した駐車場を後から見ると、ちょっと誇らしいです。」</p>
@@ -825,12 +846,7 @@
       <span class="en">MESSAGE</span>
       <h2>代表からのメッセージ</h2>
     </div>
-    <div class="msg">
-      <div class="ph-slot">
-        <span class="cam">📷</span>
-        <span class="t">写真⑩　代表・石田悠人さん</span>
-        <span class="s">上半身・自然な表情／作業着でも私服でも／明るい場所で</span>
-      </div>
+    <div class="msg msg-solo">
       <div>
         <h3><span class="nb">肩書きじゃない。</span><span class="nb">現場で、</span><span class="nb">人生をひっくり返す。</span></h3>
         <p>私は大学を中退しています。コロナで思い描いていたレールから外れ、会社勤めもうまくいかず、ずいぶん遠回りをしてきました。「中退でしょ」と言われるたび、正直、悔しかった。</p>
